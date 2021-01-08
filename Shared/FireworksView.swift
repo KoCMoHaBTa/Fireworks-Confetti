@@ -39,12 +39,16 @@ class FireworksPlayer: NSObject, AVAudioPlayerDelegate {
     
     func scheduleExplosionEvery(timeInterval: TimeInterval, delay: TimeInterval) {
         
-        let timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true, block: { [weak self] (_) in
+        let timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true, block: { [weak self] _ in
             
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now().advanced(by: .milliseconds(Int(delay * 1000)))) {
+            let timer = Timer.scheduledTimer(withTimeInterval: delay, repeats: false) { timer in
                 
+                timer.invalidate()
+                self?.timers.removeAll(where: { $0 === timer })
                 self?.playExplosion()
             }
+            
+            self?.timers.append(timer)
         })
         
         self.timers.append(timer)
