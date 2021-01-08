@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 //Based on https://github.com/bryce-co/RecreatingiMessageConfetti
 struct ConfettiView: UIViewRepresentable {
@@ -102,8 +103,10 @@ class ConfettiUIView: UIView {
     
     var isStarted: Bool {
         
-        return self.emitterLayer?.birthRate == 1
+        return self.emitterLayer?.birthRate == 1 && self.emitterLayer?.lifetime == 1
     }
+    
+    let player = try? AVAudioPlayer(contentsOf: Bundle.main.url(forResource: "confetti-pop", withExtension: "mp3")!)
     
     override func layoutSublayers(of layer: CALayer) {
         
@@ -152,11 +155,15 @@ class ConfettiUIView: UIView {
         self.emitterLayer = emitterLayer
         self.layer.addSublayer(emitterLayer)
         self.layoutEmitterLayer()
+        
+        self.player?.currentTime = 0
+        self.player?.play()
     }
     
     func stop() {
         
         self.emitterLayer?.birthRate = 0
+        self.emitterLayer?.lifetime = 0
     }
 }
 

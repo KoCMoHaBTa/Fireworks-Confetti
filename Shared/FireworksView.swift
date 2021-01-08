@@ -87,7 +87,7 @@ class FireworksUIView: UIView {
     
     var isStarted: Bool {
         
-        return self.emitterLayer?.lifetime == 1
+        return self.emitterLayer?.birthRate == 1 && self.emitterLayer?.lifetime == 1
     }
     
     override func layoutSublayers(of layer: CALayer) {

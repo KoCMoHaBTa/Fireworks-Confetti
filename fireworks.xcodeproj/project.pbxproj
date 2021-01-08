@@ -21,6 +21,8 @@
 		E6397D0525A60CAF00BF073C /* CelebrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6397D0325A60CAF00BF073C /* CelebrationView.swift */; };
 		E6397D1225A8563100BF073C /* fireworks-explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6397D1125A8563000BF073C /* fireworks-explosion.mp3 */; };
 		E6397D1325A8563100BF073C /* fireworks-explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6397D1125A8563000BF073C /* fireworks-explosion.mp3 */; };
+		E6397D4225A8BA3A00BF073C /* confetti-pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6397D4125A8BA3A00BF073C /* confetti-pop.mp3 */; };
+		E6397D4325A8BA3A00BF073C /* confetti-pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6397D4125A8BA3A00BF073C /* confetti-pop.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,7 @@
 		E6397CFE25A5FCF300BF073C /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
 		E6397D0325A60CAF00BF073C /* CelebrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrationView.swift; sourceTree = "<group>"; };
 		E6397D1125A8563000BF073C /* fireworks-explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "fireworks-explosion.mp3"; sourceTree = "<group>"; };
+		E6397D4125A8BA3A00BF073C /* confetti-pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "confetti-pop.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +79,7 @@
 				E6397CFE25A5FCF300BF073C /* ConfettiView.swift */,
 				E6397CC525A599C400BF073C /* Assets.xcassets */,
 				E6397D1125A8563000BF073C /* fireworks-explosion.mp3 */,
+				E6397D4125A8BA3A00BF073C /* confetti-pop.mp3 */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -185,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6397CDA25A599C400BF073C /* Assets.xcassets in Resources */,
+				E6397D4225A8BA3A00BF073C /* confetti-pop.mp3 in Resources */,
 				E6397D1225A8563100BF073C /* fireworks-explosion.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6397CDB25A599C400BF073C /* Assets.xcassets in Resources */,
+				E6397D4325A8BA3A00BF073C /* confetti-pop.mp3 in Resources */,
 				E6397D1325A8563100BF073C /* fireworks-explosion.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
