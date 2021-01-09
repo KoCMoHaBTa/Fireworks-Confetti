@@ -31,58 +31,12 @@ struct FireworksView: UIViewRepresentable {
     }
 }
 
-//Because AVAudioPlayer can play only 1 sound at a time
-class FireworksPlayer: NSObject, AVAudioPlayerDelegate {
-    
-    var players: [AVAudioPlayer] = []
-    var timers: [Timer] = []
-    
-    func scheduleExplosionEvery(timeInterval: TimeInterval, delay: TimeInterval) {
-        
-        let timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true, block: { [weak self] _ in
-            
-            let timer = Timer.scheduledTimer(withTimeInterval: delay, repeats: false) { timer in
-                
-                timer.invalidate()
-                self?.timers.removeAll(where: { $0 === timer })
-                self?.playExplosion()
-            }
-            
-            self?.timers.append(timer)
-        })
-        
-        self.timers.append(timer)
-    }
-    
-    func playExplosion() {
-        
-        guard let player = try? AVAudioPlayer(contentsOf: Bundle.main.url(forResource: "fireworks-explosion", withExtension: "mp3")!) else {
-            
-            return
-        }
-        
-        self.players.append(player)
-        player.delegate = self
-        player.play()
-    }
-    
-    func stop() {
-
-        self.timers.forEach { $0.invalidate() }
-        self.timers = []
-    }
-    
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        
-        self.players.removeAll(where: { $0 === player })
-    }
-}
-
 class FireworksUIView: UIView {
     
     var numberOfFireworks = 5
     var emitterLayer: CAEmitterLayer?
-    let player = FireworksPlayer()
+    let explosionEffect = Bundle.main.url(forResource: "fireworks-explosion", withExtension: "mp3")!
+    let player = AudioPlayer()
     
     
     var isStarted: Bool {
@@ -150,7 +104,7 @@ class FireworksUIView: UIView {
             
             let explosionTimerInterval: TimeInterval = TimeInterval(1 / locationCell.birthRate)
             let explosionDelay: TimeInterval = TimeInterval(0.9 * locationCell.lifetime)
-            self.player.scheduleExplosionEvery(timeInterval: explosionTimerInterval, delay: explosionDelay)
+            self.player.schedulePlaying(file: self.explosionEffect, every: explosionTimerInterval, delay: explosionDelay)
             
             return locationCell
         }
@@ -166,7 +120,7 @@ class FireworksUIView: UIView {
         self.emitterLayer?.birthRate = 0
         self.emitterLayer?.lifetime = 0
         
-        self.player.stop()
+        self.player.cancelScheduledPlaying()
     }
 }
 

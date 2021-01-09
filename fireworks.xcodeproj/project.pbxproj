@@ -23,6 +23,10 @@
 		E6397D1325A8563100BF073C /* fireworks-explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6397D1125A8563000BF073C /* fireworks-explosion.mp3 */; };
 		E6397D4225A8BA3A00BF073C /* confetti-pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6397D4125A8BA3A00BF073C /* confetti-pop.mp3 */; };
 		E6397D4325A8BA3A00BF073C /* confetti-pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6397D4125A8BA3A00BF073C /* confetti-pop.mp3 */; };
+		E6397D4B25A9A5FD00BF073C /* confetti-falling.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6397D4A25A9A5FD00BF073C /* confetti-falling.mp3 */; };
+		E6397D4C25A9A5FD00BF073C /* confetti-falling.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6397D4A25A9A5FD00BF073C /* confetti-falling.mp3 */; };
+		E6397D5225A9A69C00BF073C /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6397D5125A9A69C00BF073C /* AudioPlayer.swift */; };
+		E6397D5325A9A69C00BF073C /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6397D5125A9A69C00BF073C /* AudioPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +45,8 @@
 		E6397D4125A8BA3A00BF073C /* confetti-pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "confetti-pop.mp3"; sourceTree = "<group>"; };
 		E6397D4825A99C6800BF073C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E6397D4925A99CB600BF073C /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		E6397D4A25A9A5FD00BF073C /* confetti-falling.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "confetti-falling.mp3"; sourceTree = "<group>"; };
+		E6397D5125A9A69C00BF073C /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,9 +87,11 @@
 				E6397D0325A60CAF00BF073C /* CelebrationView.swift */,
 				E6397CF925A5FCC600BF073C /* FireworksView.swift */,
 				E6397CFE25A5FCF300BF073C /* ConfettiView.swift */,
+				E6397D5125A9A69C00BF073C /* AudioPlayer.swift */,
 				E6397CC525A599C400BF073C /* Assets.xcassets */,
 				E6397D1125A8563000BF073C /* fireworks-explosion.mp3 */,
 				E6397D4125A8BA3A00BF073C /* confetti-pop.mp3 */,
+				E6397D4A25A9A5FD00BF073C /* confetti-falling.mp3 */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -193,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6397CDA25A599C400BF073C /* Assets.xcassets in Resources */,
+				E6397D4B25A9A5FD00BF073C /* confetti-falling.mp3 in Resources */,
 				E6397D4225A8BA3A00BF073C /* confetti-pop.mp3 in Resources */,
 				E6397D1225A8563100BF073C /* fireworks-explosion.mp3 in Resources */,
 			);
@@ -203,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6397CDB25A599C400BF073C /* Assets.xcassets in Resources */,
+				E6397D4C25A9A5FD00BF073C /* confetti-falling.mp3 in Resources */,
 				E6397D4325A8BA3A00BF073C /* confetti-pop.mp3 in Resources */,
 				E6397D1325A8563100BF073C /* fireworks-explosion.mp3 in Resources */,
 			);
@@ -220,6 +230,7 @@
 				E6397CFA25A5FCC600BF073C /* FireworksView.swift in Sources */,
 				E6397CD825A599C400BF073C /* ContentView.swift in Sources */,
 				E6397CD625A599C400BF073C /* fireworksApp.swift in Sources */,
+				E6397D5225A9A69C00BF073C /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +243,7 @@
 				E6397CFB25A5FCC600BF073C /* FireworksView.swift in Sources */,
 				E6397CD925A599C400BF073C /* ContentView.swift in Sources */,
 				E6397CD725A599C400BF073C /* fireworksApp.swift in Sources */,
+				E6397D5325A9A69C00BF073C /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

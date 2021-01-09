@@ -32,6 +32,24 @@ struct ConfettiView: UIViewRepresentable {
     }
 }
 
+class ConfettiPlayer: NSObject {
+ 
+    var players: [AVAudioPlayer] = []
+    
+    func play(file: URL) {
+        
+    }
+    
+    func playPop() {
+        
+    }
+    
+    func playFalling() {
+        
+    }
+    let popPlayer = try? AVAudioPlayer(contentsOf: Bundle.main.url(forResource: "confetti-pop", withExtension: "mp3")!)
+}
+
 class ConfettiUIView: UIView {
     
     class ConfettiType {
@@ -100,13 +118,14 @@ class ConfettiUIView: UIView {
     }()
     
     var emitterLayer: CAEmitterLayer?
+    let confettiPopEffect = Bundle.main.url(forResource: "confetti-pop", withExtension: "mp3")!
+    let confettiFallingEffect = Bundle.main.url(forResource: "confetti-falling", withExtension: "mp3")!
+    let player = AudioPlayer()
     
     var isStarted: Bool {
         
         return self.emitterLayer?.birthRate == 1 && self.emitterLayer?.lifetime == 1
     }
-    
-    let player = try? AVAudioPlayer(contentsOf: Bundle.main.url(forResource: "confetti-pop", withExtension: "mp3")!)
     
     override func layoutSublayers(of layer: CALayer) {
         
@@ -156,8 +175,11 @@ class ConfettiUIView: UIView {
         self.layer.addSublayer(emitterLayer)
         self.layoutEmitterLayer()
         
-        self.player?.currentTime = 0
-        self.player?.play()
+        self.player.play(file: self.confettiPopEffect)
+        self.player.play(file: self.confettiFallingEffect) { player in
+            
+            player.setVolume(0, fadeDuration: 7)
+        }
     }
     
     func stop() {
