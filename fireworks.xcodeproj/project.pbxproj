@@ -39,6 +39,8 @@
 		E6397D0325A60CAF00BF073C /* CelebrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrationView.swift; sourceTree = "<group>"; };
 		E6397D1125A8563000BF073C /* fireworks-explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "fireworks-explosion.mp3"; sourceTree = "<group>"; };
 		E6397D4125A8BA3A00BF073C /* confetti-pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "confetti-pop.mp3"; sourceTree = "<group>"; };
+		E6397D4825A99C6800BF073C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E6397D4925A99CB600BF073C /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,8 @@
 		E6397CBD25A599C200BF073C = {
 			isa = PBXGroup;
 			children = (
+				E6397D4825A99C6800BF073C /* README.md */,
+				E6397D4925A99CB600BF073C /* LICENSE */,
 				E6397CC225A599C200BF073C /* Shared */,
 				E6397CCC25A599C400BF073C /* iOS */,
 				E6397CD325A599C400BF073C /* macOS */,
