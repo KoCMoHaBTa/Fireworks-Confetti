@@ -8,6 +8,7 @@
 import SwiftUI
 import AVFoundation
 
+//Based on code generated trough https://www.fireworksapp.xyz
 struct FireworksView: UIViewRepresentable {
     
     @Binding var started: Bool
